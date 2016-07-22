@@ -5,6 +5,8 @@
 [![Dependency Status](https://david-dm.org/HewlettPackard/javascript-ilorest-library.svg)](https://david-dm.org/HewlettPackard/javascript-ilorest-library)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/HewlettPackard/javascript-ilorest-library/master/LICENSE)
 # ilorest
+
+[![Join the chat at https://gitter.im/HewlettPackard/javascript-ilorest-library](https://badges.gitter.im/HewlettPackard/javascript-ilorest-library.svg)](https://gitter.im/HewlettPackard/javascript-ilorest-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 > Javascript SDK for Hewlett Packard Enterprise Restful/Redfish API
 
 ## Installation
