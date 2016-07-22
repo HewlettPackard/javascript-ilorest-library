@@ -7,7 +7,7 @@
 # ilorest
 
 [![Join the chat at https://gitter.im/HewlettPackard/javascript-ilorest-library](https://badges.gitter.im/HewlettPackard/javascript-ilorest-library.svg)](https://gitter.im/HewlettPackard/javascript-ilorest-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-> Javascript SDK for Hewlett Packard Enterprise Restful/Redfish API
+> JavaScript Library for Hewlett Packard Enterprise iLO RESTful/Redfish API
 
 ## Installation
 ```

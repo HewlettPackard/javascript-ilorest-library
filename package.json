@@ -1,7 +1,7 @@
 {
   "name": "ilorest",
   "version": "0.0.1",
-  "description": "iLO REST JavaScript SDK",
+  "description": "iLO REST JavaScript Library",
   "homepage": "https://github.com/HewlettPackard/javascript-ilorest-library",
   "author": {
     "name": "Hewlett Packard Enterprise",
