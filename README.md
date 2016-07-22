@@ -42,6 +42,12 @@ $ npm install
 $ gulp prepublish
 ```
 
+## Browserify
+```
+$ npm install ilorest
+
+$ browserify -r ilorest > bundle.js
+```
 
 ## License
 
