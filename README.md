@@ -1,3 +1,4 @@
+[![Gitter](https://badges.gitter.im/HewlettPackard/javascript-ilorest-library.svg)](https://gitter.im/HewlettPackard/javascript-ilorest-library?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Build Status](https://travis-ci.org/HewlettPackard/javascript-ilorest-library.svg?branch=master)](https://travis-ci.org/HewlettPackard/javascript-ilorest-library)
 [![npm version](https://badge.fury.io/js/ilorest.svg)](https://badge.fury.io/js/ilorest)
 [![Coverage Status](https://coveralls.io/repos/github/HewlettPackard/javascript-ilorest-library/badge.svg?branch=master)](https://coveralls.io/github/HewlettPackard/javascript-ilorest-library?branch=master)
