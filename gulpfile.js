@@ -12,6 +12,7 @@ var babel = require('gulp-babel');
 var del = require('del');
 var isparta = require('isparta');
 var jsdoc = require('gulp-jsdoc3');
+var coveralls = require('gulp-coveralls');
 
 // Initialize the babel transpiler so ES2015 files gets compiled
 // when they're loaded
@@ -75,6 +76,15 @@ gulp.task('test', ['pre-test'], function (cb) {
     });
 });
 
+gulp.task('coveralls', ['test'], function () {
+  if (!process.env.CI) {
+    return;
+  }
+
+  return gulp.src(path.join(__dirname, 'coverage/lcov.info'))
+    .pipe(coveralls());
+});
+
 gulp.task('babel', ['clean'], function () {
   return gulp.src('./lib/**/*.js')
     .pipe(babel())
@@ -87,4 +97,4 @@ gulp.task('clean', function () {
 
 //gulp.task('prepublish', ['nsp', 'babel']);
 gulp.task('prepublish', ['lint', 'nsp', 'babel']);
-gulp.task('default', ['lint', 'test']);
+gulp.task('default', ['lint', 'test', 'coveralls']);

@@ -39,6 +39,7 @@
     "gulp-mocha": "^2.0.0",
     "gulp-nsp": "^2.1.0",
     "gulp-plumber": "^1.0.0",
+    "gulp-coveralls": "^0.1.0",
     "isparta": "^3.0.3",
     "jshint": "^2.8.0",
     "jshint-checkstyle-file-reporter": "^0.0.1",
