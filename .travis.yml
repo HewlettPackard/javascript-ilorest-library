@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - v4
+before_script:
+- npm install -g gulp
+- npm install
+script: gulp && gulp prepublish
+deploy:
+  provider: npm
+  email: injan0913@gmail.com
+  api_key:
+    secure: BhEzkH7f01CqeNuRORR+7Le8x9z0f+8RGd1QxXfdNMOgyZb4m1/njW58Mj592g3mBraCpQDsaPkHPYUEYNPWGctO95U17ipf/biduePusKMMCgGVHv8XiIZ4WivxLMkkGnAUZ0UOyNZe3o4cuXlinWnxWILATU4CX4bbvKHE72qO4qAdAuZgoBhx+tD4ybsot/Vr5sm2VAcaBnOVFZXzvtzhApLnVdgR9tMIyVNF7FEbbFjxMvs8w+qNGI6edQn4QijqThkqilAoysmlMPmkLDOhBVNSW6NE95th54m6iFbXgY4p9RqowRNqfpMjd+V7s22XHLIva6ZdHTL7STDtX0VsgODirTR3k2ix2k7PjIp6VcjSRbxqRVQsMdGut8mOlvI7OMOyLqtfhulywGYAGm3dBxSXnFBoKtdSG2spe7+tVC7Lq9wKXV9nmSK9ovpnAE08F9pRiBSmGoJE1AZgzA63nehkbMDvpzFwvLdh+9KnieyA/o9AFCH/kuaqB5p32IEg1Ssw0U/urPHJ0h4DeSqujRE6Xn6XeGWuACCRmGb7mSwngSMv6TIY1xA0X+jFzI/JV3nBgKDXhAJrdk3+ORgnNVCg3+bb6X+Rp0vfRfeXPh8yMMxAIvukI9hjUubqfKVt1JPAfI4pxXQvIsnBZu1lvmMv3LqUX+I3iSwjWwA=
+  on:
+    tags: true
+    branch: master
+  skip_cleanup: true

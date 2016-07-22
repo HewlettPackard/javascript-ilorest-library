@@ -1,0 +1,54 @@
+{
+  "name": "ilorest",
+  "version": "0.0.1",
+  "description": "iLO REST JavaScript SDK",
+  "homepage": "https://github.com/HewlettPackard/javascript-ilorest-library",
+  "author": {
+    "name": "Hewlett Packard Enterprise",
+    "email": "ilorest-js@groups.ext.hpe.com",
+    "url": "https://github.com/HewlettPackard"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "keywords": [
+    "Hewlett Packard Enterprise",
+    "HPE",
+    "ilorest",
+    "RESTful"
+  ],
+  "repository": "git@github.com:HewlettPackard/javascript-ilorest-library.git",
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "request-promise": "^1.0.2",
+    "js-sha256": "^0.3.0",
+    "gzip-js": "^0.3.2",
+    "weakmap": "~0.0.6"
+  },
+  "devDependencies": {
+    "babel-core": "^5.5.0",
+    "del": "^2.0.2",
+    "gulp": "^3.6.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-jsdoc3": "^0.3.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-plumber": "^1.0.0",
+    "isparta": "^3.0.3",
+    "jshint": "^2.8.0",
+    "jshint-checkstyle-file-reporter": "^0.0.1",
+    "jshint-stylish": "^2.1.0",
+    "sinon": "^1.17.4",
+    "mockery": "^1.7.0",
+    "chai": "^3.5.0"
+  },
+  "scripts": {
+    "prepublish": "gulp prepublish"
+  },
+  "license": "Apache-2.0"
+}
