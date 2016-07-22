@@ -20,8 +20,8 @@
   ],
   "repository": "git@github.com:HewlettPackard/javascript-ilorest-library.git",
   "dependencies": {
-    "bluebird": "^2.10.2",
-    "request-promise": "^1.0.2",
+    "bluebird": "^3.4.1",
+    "request-promise": "^4.0.2",
     "js-sha256": "^0.3.0",
     "gzip-js": "^0.3.2",
     "weakmap": "~0.0.6"

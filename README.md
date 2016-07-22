@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/HewlettPackard/javascript-ilorest-library.svg?branch=master)](https://travis-ci.org/HewlettPackard/javascript-ilorest-library)
 [![npm version](https://badge.fury.io/js/ilorest.svg)](https://badge.fury.io/js/ilorest)
 [![Coverage Status](https://coveralls.io/repos/github/HewlettPackard/javascript-ilorest-library/badge.svg?branch=master)](https://coveralls.io/github/HewlettPackard/javascript-ilorest-library?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/hewlettpackard/javascript-ilorest-library/badge.svg)](https://snyk.io/test/github/hewlettpackard/javascript-ilorest-library)
 [![Dependency Status](https://david-dm.org/HewlettPackard/javascript-ilorest-library.svg)](https://david-dm.org/HewlettPackard/javascript-ilorest-library)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/HewlettPackard/javascript-ilorest-library/master/LICENSE)
 # ilorest
