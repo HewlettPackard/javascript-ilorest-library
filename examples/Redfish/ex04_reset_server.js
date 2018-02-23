@@ -38,7 +38,7 @@ client.login(USER, PASS)
     .then(() => {
         var rdUrl;
 
-        rdUrl = client.root.Oem.Hp.Links.ResourceDirectory['@odata.id'];
+        rdUrl = client.root.Oem.Hpe.Links.ResourceDirectory['@odata.id'];
         return client.get(rdUrl)
                     .catch((err) => {
                         console.log('\n  Get Resources Failed\n');

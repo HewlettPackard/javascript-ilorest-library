@@ -1,9 +1,9 @@
 var path = require('path');
 var gulp = require('gulp');
-// var eslint = require('gulp-eslint');
+var eslint = require('gulp-eslint');
 var jshint = require('gulp-jshint');
 var checkStyleReporter = require('jshint-checkstyle-file-reporter');
-// var excludeGitignore = require('gulp-exclude-gitignore');
+var excludeGitignore = require('gulp-exclude-gitignore');
 var mocha = require('gulp-mocha');
 var istanbul = require('gulp-istanbul');
 var nsp = require('gulp-nsp');
@@ -32,7 +32,8 @@ process.env.JSHINT_CHECKSTYLE_FILE = '.jshint.xml';
 gulp.task('doc', function (cb) {
     var config = {
         opts: {
-            destination: 'docs/gen'
+            destination: './docs/gen',
+            tutorials: './docs/tutorials'
         }
     };
     gulp.src(['README.md', './lib/**/*.js'], {read: false})
@@ -53,7 +54,7 @@ gulp.task('nsp', function (cb) {
 });
 
 gulp.task('pre-test', function () {
-  return gulp.src('./lib/**/*.js')
+  return gulp.src('lib/**/*.js')
     .pipe(istanbul({
       includeUntested: true,
       instrumenter: isparta.Instrumenter
@@ -86,15 +87,15 @@ gulp.task('coveralls', ['test'], function () {
 });
 
 gulp.task('babel', ['clean'], function () {
-  return gulp.src('./lib/**/*.js')
+  return gulp.src('lib/**/*.js')
     .pipe(babel())
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', function () {
-  return del('./sdk/dist');
+  return del('dist');
 });
 
 //gulp.task('prepublish', ['nsp', 'babel']);
-gulp.task('prepublish', ['lint', 'nsp', 'babel']);
+gulp.task('prepublish', ['lint', 'babel']);
 gulp.task('default', ['lint', 'test', 'coveralls']);

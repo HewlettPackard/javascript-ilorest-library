@@ -2,35 +2,46 @@
   "name": "ilorest",
   "version": "0.0.2",
   "description": "iLO REST JavaScript Library",
-  "homepage": "https://github.com/HewlettPackard/javascript-ilorest-library",
+  "homepage": "",
   "author": {
     "name": "Hewlett Packard Enterprise",
     "email": "ilorest-js@groups.ext.hpe.com",
     "url": "https://github.com/HewlettPackard"
   },
   "files": [
-    "dist"
+    "dist",
+    "lib/libs",
+    "lib/cpp",
+    "examples",
+    "test",
+    "binding.gyp"
   ],
   "main": "dist/index.js",
   "keywords": [
-    "Hewlett Packard Enterprise",
-    "HPE",
-    "ilorest",
-    "RESTful"
+    "HPE"
   ],
   "repository": "git@github.com:HewlettPackard/javascript-ilorest-library.git",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "bluebird": "^3.4.1",
-    "request-promise": "^4.0.2",
-    "js-sha256": "^0.3.0",
+    "global": "^4.3.2",
     "gzip-js": "^0.3.2",
-    "weakmap": "~0.0.6"
+    "js-sha256": "^0.3.0",
+    "nan": "^2.8.0",
+    "node-gyp": "^3.6.2",
+    "request": "2.75.0",
+    "request-promise": "^4.0.2"
+  },
+  "optionalDependencies": {
+    "windows-build-tools": "^1.3.1"
   },
   "devDependencies": {
-    "babel-core": "^5.5.0",
+    "babel-core": "^6.24.1",
+    "chai": "^3.5.0",
     "del": "^2.0.2",
-    "gulp": "^3.6.0",
+    "gulp": "^3.9.1",
     "gulp-babel": "^5.1.0",
+    "gulp-coveralls": "^0.1.0",
     "gulp-eslint": "^1.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^0.9.0",
@@ -39,17 +50,18 @@
     "gulp-mocha": "^2.0.0",
     "gulp-nsp": "^2.1.0",
     "gulp-plumber": "^1.0.0",
-    "gulp-coveralls": "^0.1.0",
     "isparta": "^3.0.3",
     "jshint": "^2.8.0",
     "jshint-checkstyle-file-reporter": "^0.0.1",
     "jshint-stylish": "^2.1.0",
-    "sinon": "^1.17.4",
     "mockery": "^1.7.0",
-    "chai": "^3.5.0"
+    "sinon": "^1.17.4"
   },
   "scripts": {
-    "prepublish": "gulp prepublish"
+    "prepublish": "gulp prepublish",
+    "compile": "node-gyp rebuild",
+    "compile-debug": "node-gyp rebuild --debug"
   },
+  "gypfile": true,
   "license": "Apache-2.0"
 }

@@ -24,7 +24,6 @@ var BPASS  = process.env.BPASS;  // 'PA55W0RD'
 
 var rest = require(MODULE);
 var client = rest.redfishClient(SERVER, USER, PASS, BPASS);
-
 var ris = rest.ris();
 var rbsu = ris.rbsu(client);
 
@@ -39,7 +38,6 @@ client.login(USER, PASS)
         console.log('\n  Login Failed\n');
         throw err;
     })
-
     .then(function() {        
         return client.get(client.root.Systems['@odata.id'])
             .catch((err) => {
@@ -47,7 +45,6 @@ client.login(USER, PASS)
                 throw err;
             });
     })
-
     .then(function(res) {        
         return client.get(res.body.Members[0]['@odata.id'])
             .catch((err) => {
@@ -55,9 +52,8 @@ client.login(USER, PASS)
                 throw err;
             });
     })
-
     .then(function(res) {        
-        var bios = client.get(res.body.Oem.Hp.Links.BIOS['@odata.id']);
+        var bios = client.get(res.body.Oem.Hpe.Links.BIOS['@odata.id']);
         var aRbsuData = rbsu.getRBSUdata();
         return [
             bios,
@@ -67,10 +63,18 @@ client.login(USER, PASS)
             })
         ];
     })
-
     .spread((bios, aRbsuData) => {
+        console.log('Get RBSU data');
         var baseConfigs = client.get(bios.body.links.BaseConfigs.href);
-        var rbsuData = aRbsuData[0];
+        if (aRbsuData && aRbsuData.length > 0) {
+            if (aRbsuData[0]) {
+                var rbsuData = aRbsuData[0];
+            } else {
+                throw 'ERROR: Cannot get RBSU data';
+            }
+        } else {
+            throw 'ERROR: Cannot get RBSU data';
+        }
         return [
             baseConfigs,
             rbsuData,
@@ -80,34 +84,32 @@ client.login(USER, PASS)
             })
         ];
     })
-
     .spread((baseConfigs, rbsuData, res) => {
+        console.log('Get Registry data');
         var nextRBSU;
         for (let config of baseConfigs.body.BaseConfigs) {
             nextRBSU = config.default ? config.default : nextRBSU;
         }        
-        var registryUri = res[0].Uri.extref;
         return [
             rbsuData,
             nextRBSU,
-            client.get(registryUri).catch((err) => {
-                console.log('\n  Get registryUri/BaseConfigs[default] Failed\n');
-                throw err;
-            })
+            rbsu.getRegistryContent(res[0])
+                .catch((err) => {
+                    console.log('\n  Get registry content Failed\n');
+                    throw err;
+                })
         ];
     })
-
-    .spread((currentRBSU, nextRBSU, res) => {
-        var registry = res.body;
-        return rbsu.updateRBSU(registry, currentRBSU, nextRBSU)
-            .catch((err) => {
-                throw(err + '\n  updateRBSU Failed\n');
-            });
+    .spread((currentRBSU, nextRBSU, registry) => {
+        return rbsu.updateRBSU(registry, currentRBSU, nextRBSU);
     })
-
-    .then((res) => {        
-        console.log('Updated RBSU settings');
-        console.log('Message:', res.body.error['@Message.ExtendedInfo'][0].MessageId);
+    .then((res) => {
+        if (res) {
+            console.log('Updated RBSU settings');
+            console.log('Message:', res.body.error['@Message.ExtendedInfo'][0].MessageId);
+        } else {
+            console.log('Failed to update RBSU');
+        }
         return res;
     })
     .catch((err) => {
@@ -118,7 +120,6 @@ client.login(USER, PASS)
             console.log(err);
         }
     })
-
     .finally(() => {
         console.log('Logout');
         return client.logout();

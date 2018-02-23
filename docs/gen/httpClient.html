@@ -44,17 +44,26 @@
 				</ul>
 			</li>
 			
+			<li class="dropdown">
+				<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="tutorial-Getting Started.html">Getting Started</a></li><li><a href="tutorial-RIS - RBSU features.html">RIS - RBSU features</a></li><li><a href="tutorial-Use SDK in Browser .html">Use SDK in Browser (Browserify)</a></li>
+				</ul>
+			</li>
+			
 		</ul>
-		<div class="col-sm-3 col-md-3">
-            <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        
 	</div>
 
 </div>
@@ -231,6 +240,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -257,6 +268,10 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">relative URI of RESTful/Redfish</td>
         </tr>
@@ -281,6 +296,10 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">Use data from local cache or not</td>
         </tr>
@@ -304,6 +323,12 @@
 
             
 
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
             
 
             <td class="description last">Additional headers can be passed-in, default to null</td>
@@ -792,6 +817,11 @@
 	
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="baseClient.html#logout">baseClient#logout</a>
+    </li></ul></dd>
+    
 
     
 
@@ -864,7 +894,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="patch"><span class="type-signature"></span>patch(path, body, optionalPassword, providerHeader)</h4>
+    <h4 class="name" id="patch"><span class="type-signature"></span>patch(path, body, optionalPassword, providerHeader, headers)</h4>
     
     
 </dt>
@@ -897,6 +927,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -923,6 +955,10 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">relative URI of RESTful/Redfish</td>
         </tr>
@@ -946,6 +982,10 @@
 
             
 
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">body</td>
@@ -971,6 +1011,10 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">Optional password</td>
         </tr>
@@ -995,8 +1039,42 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">Perhaps we should hide this one?</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Additional headers can be passed-in, default to null</td>
         </tr>
 
     
@@ -1097,7 +1175,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="post"><span class="type-signature"></span>post(path, body, providerHeader)</h4>
+    <h4 class="name" id="post"><span class="type-signature"></span>post(path, body, providerHeader, headers)</h4>
     
     
 </dt>
@@ -1130,6 +1208,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -1156,6 +1236,10 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">relative URI of RESTful/Redfish</td>
         </tr>
@@ -1179,6 +1263,10 @@
 
             
 
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">body</td>
@@ -1204,8 +1292,42 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">Perhaps we should hide this one?</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Additional headers can be passed-in, default to null</td>
         </tr>
 
     
@@ -1306,7 +1428,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="put"><span class="type-signature"></span>put(path, body, optionalPassword, providerHeader)</h4>
+    <h4 class="name" id="put"><span class="type-signature"></span>put(path, body, optionalPassword, providerHeader, headers)</h4>
     
     
 </dt>
@@ -1339,6 +1461,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -1365,6 +1489,10 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">relative URI of RESTful/Redfish</td>
         </tr>
@@ -1388,6 +1516,10 @@
 
             
 
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">body</td>
@@ -1413,6 +1545,10 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">Optional password</td>
         </tr>
@@ -1437,8 +1573,42 @@
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last">Perhaps we should hide this one?</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Additional headers can be passed-in, default to null</td>
         </tr>
 
     
@@ -1562,28 +1732,30 @@
 </div>
 </div>
 
-<div class="modal fade" id="searchResults">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Search results</h4>
-      </div>
-      <div class="modal-body"></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div>
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
 
 <footer>
 
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on 2016-07-25T17:07:58+08:00
+		on 2018-02-22T18:15:13+08:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
@@ -1591,7 +1763,9 @@
 
 <script src="scripts/docstrap.lib.js"></script>
 <script src="scripts/toc.js"></script>
-<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
 
 <script>
 $( function () {
@@ -1601,7 +1775,7 @@ $( function () {
 		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
 	} );
 
-	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
 		var $this = $( this );
 
 		var example = $this.find( "code" );
@@ -1637,8 +1811,7 @@ $( function () {
 	} );
 	$( "#toc" ).toc( {
 		anchorName  : function ( i, heading, prefix ) {
-			var id = $( heading ).attr( "id" );
-			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+			return $( heading ).attr( "id" ) || ( prefix + i );
 		},
 		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
 		showAndHide : false,
@@ -1664,11 +1837,13 @@ $( function () {
 <!--Google Analytics-->
 
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		SearcherDisplay.init();
-	});
-</script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
 
 </body>
 </html>

@@ -37,7 +37,7 @@ client.login(USER, PASS)
     })
 
     .then(() => {
-        var rdUrl = client.root.Oem.Hp.Links.ResourceDirectory['@odata.id'];
+        var rdUrl = client.root.Oem.Hpe.Links.ResourceDirectory['@odata.id'];
         return client.get(rdUrl).catch((err) => {
             console.log('\n  Get ResourceDirectory Failed\n');
             throw err;

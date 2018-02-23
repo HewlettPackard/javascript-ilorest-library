@@ -53,7 +53,7 @@ client.login(USER, PASS)
     })
     
     .then(function(res) {        
-        var uri = res.body.Oem.Hp.Links.SecureBoot['@odata.id'];
+        var uri = res.body.Oem.Hpe.Links.SecureBoot['@odata.id'];
         var body = {};
         body.SecureBootEnable = true;
         return client.patch(uri, body).catch((err) => {

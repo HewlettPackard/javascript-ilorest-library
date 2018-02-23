@@ -38,7 +38,6 @@ client.login(USER, PASS)
         console.log('\n  Login Failed\n');
         throw err;
     })
-
     .then(function() {
         return rbsu.getRBSUdata()
                 .catch((err) => {
@@ -46,43 +45,56 @@ client.login(USER, PASS)
                     throw err;
                 });
     })
-
     .then((res) => {
-        var rbsuData = res[0];
+        console.log('Get RBSU data');
+        if (res && res.length > 0) {
+            if (res[0]) {
+                var rbsuData = res[0];
+            } else {
+                throw 'ERROR: Cannot get RBSU data';
+            }
+        } else {
+            throw 'ERROR: Cannot get RBSU data';
+        }
         return [
             rbsuData,
             rbsu.getRegistryOption(rbsuData)
                 .catch((err) => {
-                    console.log('\n  Get registryUri Failed\n');
+                    console.log('\n  Get registry options Failed\n');
                     throw err;
                 })
         ];
     })
     .spread((rbsuData, res) => {
-        var registryUri = res[0].Uri.extref;
+        console.log('Get Registry data');
         return [
             rbsuData,
-            client.get(registryUri)
+            rbsu.getRegistryContent(res[0])
                 .catch((err) => {
-                    console.log('\n  getRegistryOption Failed\n');
+                    console.log('\n  Get registry content Failed\n');
                     throw err;
                 })
         ];
     })
     .spread((currentRBSU, res) => {
-        var registry = res.body;
-        var nextRBSU = JSON.parse(JSON.stringify(currentRBSU));
-        nextRBSU.AdminPhone = '857-5309';       
-        return rbsu.updateRBSU(registry, currentRBSU, nextRBSU)
-                .catch((err) => {
-                    console.log('\n  updateRBSU Failed\n');
-                    throw err;
-                });
+        var registry = res;
+        return [
+            registry,
+            currentRBSU,
+            rbsu.getNextSetting(currentRBSU)
+        ];
     })
-
-    .then((res) => {        
-        console.log('Updated RBSU settings');
-        console.log('Message:', res.body.error['@Message.ExtendedInfo'][0].MessageId);
+    .spread((registry, currentRBSU, nextRBSU) => {
+        nextRBSU.Attributes.AdminPhone = '857-5309';
+        return rbsu.updateRBSU(registry, currentRBSU, nextRBSU);
+    })
+    .then((res) => {
+        if (res) {
+            console.log('Updated RBSU settings');
+            console.log('Message:', res.body.error['@Message.ExtendedInfo'][0].MessageId);
+        } else {
+            console.log('Failed to update RBSU');
+        }
         return res;
     })
     .catch((err) => {
@@ -99,4 +111,3 @@ client.login(USER, PASS)
     .catch((err) => {
         console.log(err);
     });
-    
