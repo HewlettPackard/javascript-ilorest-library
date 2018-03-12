@@ -10,37 +10,100 @@
 > JavaScript Library for Hewlett Packard Enterprise iLO RESTful/Redfish API
 
 ## Installation
+### Windows
+```
+$ npm install -g windows-build-tools
+$ npm install --save ilorest
+```
+### Linux
 ```
 $ npm install --save ilorest
 ```
 
 ## Usage
+### HTTP(s) mode
 ```
 var rest = require('ilorest');
 var client = rest.restClient('https://10.10.10.10');
-client.login("admin", "password123")
-    .then(function (res) {
-        console.log(res);
+client.login()
+    .then((res) => {
+        console.log('Login');
+        return res;
     })
-    .catch(function (err) {
+    .then((res) => {
+        var root = client.root;
+        var promises = [];
+        console.log(root);
+        if (root.Links) {
+            for (let x in root) {
+                if (root.hasOwnProperty(x) && root[x].hasOwnProperty('@odata.id')) {
+                    promises.push(client.get(root[x]['@odata.id'])
+                        .then((res) => console.log(res.body)));
+                }
+            }
+            return promises;
+        }
+        throw Error('No link(s)');
+    })
+    .spread(() => {
+        console.log('Get link(s) informations');
+    })
+    .catch((err) => {
         console.log(err);
+    })
+    .finally((res) => {
+        console.log('Logout');
+        return client.logout();
     });
 ```
+### Local(Blobstore) mode
+```
+var rest = require('ilorest');
+var client = rest.restClient('blobstore://');
+client.login()
+    .then((res) => {
+        console.log('Login');
+        return res;
+    })
+    .then((res) => {
+        var root = client.root;
+        var promises = [];
+        console.log(root);
+        if (root.Links) {
+            for (let x in root) {
+                if (root.hasOwnProperty(x) && root[x].hasOwnProperty('@odata.id')) {
+                    promises.push(client.get(root[x]['@odata.id'])
+                        .then((res) => console.log(res.body)));
+                }
+            }
+            return promises;
+        }
+        throw Error('No link(s)');
+    })
+    .spread(() => {
+        console.log('Get link(s) informations');
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+    .finally((res) => {
+        console.log('Logout');
+        return client.logout();
+    });
+```
+
 
 ## Build from source
 This project uses the [Gulp](http://gulpjs.com/) build system.  To build the project:
 
-- Install Gulp (globally)
-```
-$ npm install -g gulp
-```
 - NPM depedency install
 ```
 $ npm install
 ```
 - Build the project
 ```
-$ gulp prepublish
+$ npm run compile
+$ npm run prepublish
 ```
 
 ## Browserify
