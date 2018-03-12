@@ -82,7 +82,6 @@ NAN_MODULE_INIT(Initialize) {
     signal(SIGSEGV, sig_handler);
     signal(SIGABRT, sig_handler);
     signal(SIGILL, sig_handler);
-    signal(SIGTERM, sig_handler);
     node::AtExit(module_exit);
 }
 
