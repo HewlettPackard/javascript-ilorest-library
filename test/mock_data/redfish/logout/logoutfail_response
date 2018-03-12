@@ -1,0 +1,13 @@
+HTTP/1.1 500 Internal Server Error
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 43
+Content-type: application/json; charset=utf-8
+Date: Thu, 08 Mar 2018 08:10:57 GMT
+ETag: W/"04111EE5"
+OData-Version: 4.0
+X-Frame-Options: sameorigin
+X-Host-Auth-Method-Used: Session
+X_HP-CHRP-Service-Version: 1.0.3
+
+{"error":{"message":"this is logout fail"}}

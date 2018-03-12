@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Allow: GET, HEAD
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 364
+Content-type: application/json; charset=utf-8
+Date: Thu, 08 Mar 2018 08:28:18 GMT
+ETag: W/"A3A6BF43"
+Link: </redfish/v1/SchemaStore/en/ComputerSystemCollection.json/>; rel=describedby
+OData-Version: 4.0
+X-Frame-Options: sameorigin
+X-Host-Auth-Method-Used: Session
+
+{"@odata.context":"/redfish/v1/$metadata#ComputerSystemCollection.ComputerSystemCollection","@odata.etag":"W/\"A3A6BF43\"","@odata.id":"/redfish/v1/Systems/","@odata.type":"#ComputerSystemCollection.ComputerSystemCollection","Description":"Computer Systems view","Name":"Computer Systems","Members":[{"@odata.id":"/redfish/v1/Systems/1/"}],"Members@odata.count":1}

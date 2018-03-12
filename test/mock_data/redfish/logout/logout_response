@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 161
+Content-type: application/json; charset=utf-8
+Date: Thu, 08 Mar 2018 08:10:57 GMT
+ETag: W/"04111EE5"
+OData-Version: 4.0
+X-Frame-Options: sameorigin
+X-Host-Auth-Method-Used: Session
+X_HP-CHRP-Service-Version: 1.0.3
+
+{"error":{"code":"iLO.0.10.ExtendedInfo","message":"See @Message.ExtendedInfo for more information.","@Message.ExtendedInfo":[{"MessageId":"Base.1.0.Success"}]}}

@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Allow: GET, HEAD
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 686
+Content-type: application/json; charset=utf-8
+Date: Thu, 08 Mar 2018 08:28:18 GMT
+ETag: W/"A3A6BF43"
+Link: </redfish/v1/SchemaStore/en/MessageRegistryFileCollection.json/>; rel=describedby
+OData-Version: 4.0
+X-Frame-Options: sameorigin
+X-Host-Auth-Method-Used: Session
+
+{"@odata.context":"/redfish/v1/$metadata#MessageRegistryFileCollection.MessageRegistryFileCollection","@odata.etag":"W/\"A3A6BF43\"","@odata.id":"/redfish/v1/Registries/","@odata.type":"#MessageRegistryFileCollection.MessageRegistryFileCollection","Description":"Registry Repository","Name":"Registry File Repository","Members":[{"@odata.id":"/redfish/v1/Registries/Base/"},{"@odata.id":"/redfish/v1/Registries/HpeCommon/"},{"@odata.id":"/redfish/v1/Registries/iLO/"},{"@odata.id":"/redfish/v1/Registries/iLOEvents/"},{"@odata.id":"/redfish/v1/Registries/BiosAttributeRegistryU34.v1_1_20/"},{"@odata.id":"/redfish/v1/Registries/HpeBiosMessageRegistry.v1_0_0/"}],"Members@odata.count":6}

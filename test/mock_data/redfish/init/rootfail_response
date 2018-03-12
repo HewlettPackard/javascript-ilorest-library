@@ -1,0 +1,12 @@
+HTTP/1.1 500 Internal Server Error
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 45
+Content-type: application/json; charset=utf-8
+Date: Thu, 08 Mar 2018 07:09:10 GMT
+ETag: W/"91EB9BBF"
+OData-Version: 4.0
+X-Frame-Options: sameorigin
+X_HP-CHRP-Service-Version: 1.0.3
+
+{"error":{"message":"this is get root fail"}}

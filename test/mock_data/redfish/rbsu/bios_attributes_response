@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Allow: GET, HEAD
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 818
+Content-type: application/json; charset=utf-8
+Date: Thu, 08 Mar 2018 08:28:19 GMT
+ETag: W/"DECCDC2F"
+Link: </redfish/v1/SchemaStore/en/MessageRegistryFile.json/>; rel=describedby
+OData-Version: 4.0
+X-Frame-Options: sameorigin
+X-Host-Auth-Method-Used: Session
+
+{"@odata.context":"/redfish/v1/$metadata#MessageRegistryFile.MessageRegistryFile","@odata.etag":"W/\"DECCDC2F\"","@odata.id":"/redfish/v1/Registries/BiosAttributeRegistryU34.v1_1_20/","@odata.type":"#MessageRegistryFile.v1_0_4.MessageRegistryFile","Id":"BiosAttributeRegistryU34.v1_1_20","Description":"Registry Definition File for BiosAttributeRegistryU34.v1_1_20","Languages":["en","ja","zh"],"Location":[{"Language":"en","Uri":"/redfish/v1/registrystore/registries/en/biosattributeregistryu34.v1_1_20/"},{"Language":"ja","Uri":"/redfish/v1/registrystore/registries/ja/biosattributeregistryu34.v1_1_20/"},{"Language":"zh","Uri":"/redfish/v1/registrystore/registries/zh/biosattributeregistryu34.v1_1_20/"}],"Name":"BiosAttributeRegistryU34.v1_1_20 Message Registry File","Registry":"BiosAttributeRegistryU34.v1_1_20"}

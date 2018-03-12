@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Allow: GET, HEAD, POST
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 870
+Content-type: application/json; charset=utf-8
+Date: Thu, 08 Mar 2018 08:04:52 GMT
+ETag: W/"EFE62D01"
+Link: </redfish/v1/SchemaStore/en/SessionCollection.json/>; rel=describedby
+OData-Version: 4.0
+X-Frame-Options: sameorigin
+X-Host-Auth-Method-Used: AutoLogin
+
+{"@odata.context":"/redfish/v1/$metadata#SessionCollection.SessionCollection","@odata.etag":"W/\"EFE62D01\"","@odata.id":"/redfish/v1/SessionService/Sessions/","@odata.type":"#SessionCollection.SessionCollection","Description":"Manager User Sessions","Name":"Sessions","Oem":{"Hpe":{"@odata.context":"/redfish/v1/$metadata#HpeiLOSessionsSummary.HpeiLOSessionsSummary","@odata.type":"#HpeiLOSessionsSummary.v2_0_0.HpeiLOSessionsSummary","Links":{"MySession":{"@odata.id":"/redfish/v1/SessionService/Sessions/system%20administrator000000005aa0eea40e560418/"}}}},"Members":[{"@odata.id":"/redfish/v1/SessionService/Sessions/username000000005aa0eba421cac083/"},{"@odata.id":"/redfish/v1/SessionService/Sessions/system%20administrator000000005aa0eea40e560418/"},{"@odata.id":"/redfish/v1/SessionService/Sessions/%5bnone%5d000000005a93fda42ac08312/"}],"Members@odata.count":3}
