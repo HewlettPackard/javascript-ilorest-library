@@ -24,7 +24,7 @@ $ npm install --save ilorest
 ### HTTP(s) mode
 ```
 var rest = require('ilorest');
-var client = rest.restClient('https://10.10.10.10');
+var client = rest.redfishClient('https://10.10.10.10');
 client.login()
     .then((res) => {
         console.log('Login');
@@ -59,7 +59,7 @@ client.login()
 ### Local(Blobstore) mode
 ```
 var rest = require('ilorest');
-var client = rest.restClient('blobstore://');
+var client = rest.redfishClient('blobstore://');
 client.login()
     .then((res) => {
         console.log('Login');
