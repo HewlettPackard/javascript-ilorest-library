@@ -1,23 +1,25 @@
 {
   "name": "ilorest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "iLO REST JavaScript Library",
-  "homepage": "",
+  "homepage": "https://github.com/HewlettPackard/javascript-ilorest-library",
   "author": {
     "name": "Hewlett Packard Enterprise",
     "email": "ilorest-js@groups.ext.hpe.com",
     "url": "https://github.com/HewlettPackard"
   },
   "files": [
+    "dist",
     "lib/libs",
     "lib/cpp",
-    "examples",
-    "test",
     "binding.gyp"
   ],
   "main": "dist/index.js",
   "keywords": [
-    "HPE"
+    "Hewlett Packard Enterprise",
+    "HPE",
+    "ilorest",
+    "RESTful"
   ],
   "repository": "git@github.com:HewlettPackard/javascript-ilorest-library.git",
   "dependencies": {
