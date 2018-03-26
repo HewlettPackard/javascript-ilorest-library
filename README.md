@@ -63,10 +63,10 @@ var client = rest.redfishClient('blobstore://');
 client.login()
     .then((res) => {
         console.log('Login');
-        return res;
+        return client.getRootObject();
     })
     .then((res) => {
-        var root = client.root;
+        var root = res.data;
         var promises = [];
         console.log(root);
         if (root.Links) {
@@ -94,7 +94,7 @@ client.login()
 
 
 ## Build from source
-This project uses the [Gulp](http://gulpjs.com/) build system.  To build the project:
+This project uses [Gulp](http://gulpjs.com/).  To build the project:
 
 - NPM depedency install
 ```
