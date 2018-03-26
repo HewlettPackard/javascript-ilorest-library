@@ -25,7 +25,6 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "bluebird": "^3.4.1",
-    "global": "^4.3.2",
     "gzip-js": "^0.3.2",
     "js-sha256": "^0.3.0",
     "nan": "^2.8.0",
