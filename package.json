@@ -28,7 +28,7 @@
     "gzip-js": "^0.3.2",
     "js-sha256": "^0.3.0",
     "nan": "^2.8.0",
-    "node-gyp": "^3.6.2",
+    "node-gyp": "^4.0.0",
     "request": "2.82.0",
     "request-promise": "^4.0.2"
   },
