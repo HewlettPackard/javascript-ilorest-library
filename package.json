@@ -30,7 +30,8 @@
     "nan": "^2.8.0",
     "node-gyp": "^3.6.2",
     "request": "2.82.0",
-    "request-promise": "^4.0.2"
+    "request-promise": "^4.0.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -56,10 +57,12 @@
   },
   "scripts": {
     "test": "gulp coveralls",
-    "prepublish": "gulp prepublish",
+    "prepublish": "yarn run snyk-protect && gulp prepublish",
     "compile": "node-gyp rebuild",
-    "compile-debug": "node-gyp rebuild --debug"
+    "compile-debug": "node-gyp rebuild --debug",
+    "snyk-protect": "snyk protect"
   },
   "gypfile": true,
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "snyk": true
 }
